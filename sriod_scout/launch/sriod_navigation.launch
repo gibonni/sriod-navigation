@@ -1,0 +1,14 @@
+<!-- sriod_navigation.launch -->
+<launch>
+    <!-- Launch sriod_scout_node -->
+    <node name="sriod_scout_node" pkg="sriod_scout" type="sriod_scout_node" output="screen" />
+
+    <!-- Launch SriodNavigation.py with remapping -->
+    <node name="sriod_navigation_node" pkg="sriod_scout" type="SriodNavigation.py" output="screen">
+        <remap from="cmd_vel" to="turtle1/cmd_vel" />
+    </node>
+
+    <!-- Launch turtlesim_node -->
+    <node name="turtlesim_node" pkg="turtlesim" type="turtlesim_node" output="screen" />
+</launch>
+
